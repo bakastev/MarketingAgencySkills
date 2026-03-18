@@ -1,14 +1,14 @@
 # 🏢 Marketing Agency Skills
 
-OpenAI/Agent-skill-basierte Skill-Bibliothek für die Growing Brands Marketing Agentur.
+A collection of OpenAI/Agent-ready skill files for running a modern marketing agency with AI. Built by and for [Growing Brands](https://www.growing-brands.de).
 
-## Struktur
+## Structure
 
 ```
 MarketingAgencySkills/
 ├── cmo/                          # Chief Marketing Officer (Orchestrator)
 │   └── SKILL.md
-├── strategy/                     # Strategie
+├── strategy/                     # Strategy & Research
 │   └── customer-avatar/          # Deep Customer Avatar Architect ✅
 ├── brand/                        # Branding
 ├── content/                      # Content Creation
@@ -20,19 +20,60 @@ MarketingAgencySkills/
 └── ops/                          # Operations & Automation
 ```
 
-## Chef Skill: CMO (Chief Marketing Officer)
+## How It Works
 
-Der CMO-Skill orchestriert alle spezialisierten Skills. Er ist der erste Ansprechpunkt für alle Marketing-Anfragen und delegiert an die Fach-Skills.
+### The CMO (Orchestrator)
 
-## Nutzung
+The `cmo/SKILL.md` is the top-level orchestrator. It receives requests, identifies which specialist skill to invoke, checks dependencies (e.g. no messaging without an avatar), and ensures consistency across all outputs.
 
-Jeder Skill hat eine `SKILL.md` mit:
-- **Purpose** — Was der Skill macht
-- **Core Principles** — Leitprinzipien
-- **Workflow** — Schritt-für-Schritt Ablauf
-- **Output Format** — Strukturierter Output
-- **Guardrails** — Was der Skill vermeiden soll
+**Standard workflow:** `Kickoff → Avatar → Positioning → Messaging → Content → Ads → Analytics → Optimization`
+
+### Specialist Skills
+
+Each skill is self-contained in its own folder with a `SKILL.md` file containing:
+
+- **Purpose** — What the skill does
+- **Core Principles** — Guiding rules
+- **Workflow** — Step-by-step process
+- **Output Format** — Structured output template
+- **Guardrails** — What to avoid
+
+### Current Skills
+
+| Skill | Discipline | Status |
+|---|---|---|
+| **Customer Avatar Architect** | Strategy/Research | ✅ Active |
+| Brand Architect | Branding | 🔜 Planned |
+| Content Strategist | Content | 🔜 Planned |
+| SEO Specialist | SEO | 🔜 Planned |
+| Ads Strategist | Paid Media | 🔜 Planned |
+| Social Media Manager | Social | 🔜 Planned |
+| Analytics Lead | Analytics | 🔜 Planned |
+| Sales Enablement | Sales | 🔜 Planned |
+| Ops Automation | Operations | 🔜 Planned |
+
+## Usage
+
+These skills are designed to work with any agent framework that supports skill files (OpenClaw, Claude, GPT, etc.). Each `SKILL.md` can be used as a system prompt or imported into your agent's context.
+
+1. Pick the skill you need
+2. Provide the required inputs (customer data, brief, etc.)
+3. The skill follows its workflow and produces structured output
+
+## Contributing
+
+Contributions welcome! Please:
+
+1. Follow the existing folder structure
+2. Each skill gets its own folder with a `SKILL.md`
+3. Include purpose, principles, workflow, output format, and guardrails
+4. Keep skills language-agnostic where possible
+5. Submit a PR
+
+## License
+
+MIT — use freely, attribution appreciated.
 
 ---
 
-*Growing Brands © 2026*
+*[Growing Brands](https://www.growing-brands.de) © 2026*
