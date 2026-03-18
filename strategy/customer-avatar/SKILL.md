@@ -1,65 +1,59 @@
 # Deep Customer Avatar Architect
 
-## Growing Brands Edition
+Creates evidence-based customer avatars using JTBD, Job Map, behavioral psychology, Belief Systems, and psycholinguistic VoC analysis.
 
----
-
-## Purpose
-
-Erstellt evidenzbasierte Kundenavatare auf Basis von JTBD, Job Map, Verhaltenspsychologie, Belief Systems und psycholinguistischer VoC-Analyse.
-
-**Keine fiktionalen Personas.** Priorisierte Entscheidungsmodelle mit klaren Unsicherheiten, Segmentlogik und strategischen Implikationen.
+**No fictional personas.** Prioritized decision models with clear uncertainties, segment logic, and strategic implications.
 
 ---
 
 ## Core Principles
 
-1. **Jobs vor Demografie** — Alter, Geschlecht, Einkommen sind Nebenvariablen. Primär: Situation, Job, Motivation, Constraint, Transformation.
-2. **Nur evidenzgestützte Aussagen** — Jede Aussage bekommt einen Evidenzstatus.
-3. **Trenne Beobachtung, Interpretation und Hypothese** — Keine Vermischung.
-4. **Berücksichtige funktionale, emotionale und soziale Jobs** — Gleichwertig.
-5. **Extrahiere Desire, Identity und Belief Systems** — Das ist der Hebel.
-6. **Nutze echte Sprachmuster der Zielgruppe** — Sprache ist Verhalten.
-7. **Jeder Output muss aktivierbar sein** — Für Marketing, Produkt, Sales.
+1. **Jobs over demographics** — Age, gender, income are secondary variables. Primary: Situation, Job, Motivation, Constraint, Transformation.
+2. **Evidence-backed statements only** — Every statement gets an evidence status label.
+3. **Separate observation, interpretation, and hypothesis** — No mixing.
+4. **Address functional, emotional, and social jobs** — Equally.
+5. **Extract Desire, Identity, and Belief Systems** — That's the leverage point.
+6. **Use real language patterns from the target group** — Language is behavior.
+7. **Every output must be actionable** — For marketing, product, sales.
 
 ---
 
 ## Evidence Status Labels
 
-| Label | Bedeutung |
+| Label | Meaning |
 |---|---|
-| `belegt` | Direkt in Rohdaten gefunden (Zitat, Metrik) |
-| `stark plausibel` | Mehrfache Indizien, kein Widerspruch |
-| `schwach plausibel` | Einzelnes Indiz, könnte Zufall sein |
-| `offene Annahme` | Logisch geschlossen, aber nicht belegt |
+| `verified` | Directly found in raw data (quote, metric) |
+| `strongly plausible` | Multiple indicators, no contradiction |
+| `weakly plausible` | Single indicator, could be coincidence |
+| `open assumption` | Logically inferred, but unverified |
 
 ---
 
-## Workflow (8 Module)
+## Workflow (8 Modules)
 
-### Modul 1: Research Intake & Evidence Normalization
+### Module 1: Research Intake & Evidence Normalization
 
-**Aufgabe:** Alle Inputs in ein standardisiertes Erkenntnismodell überführen.
+**Task:** Convert all inputs into a standardized knowledge model.
 
-**Akzeptierte Inputs:**
-- Interviewtranskripte
-- Sales Calls
-- Support Tickets
+**Accepted Inputs:**
+- Interview transcripts
+- Sales calls
+- Support tickets
 - Reviews
-- Reddit/Foren-Diskussionen
-- Umfragen (Offene Texte)
-- CRM-Notizen
-- Landingpage-Kommentare
-- Callcenter-VoC
-- Produktnutzungsdaten
-- Marktforschungsnotizen
-- Konkurrenz-Claims
+- Reddit/Forum discussions
+- Surveys (open text)
+- CRM notes
+- Landing page comments
+- Call center VoC
+- Product usage data
+- Market research notes
+- Competitor claims
 
-**Pro Output-Einheit (Evidence Unit):**
+**Per Output Unit (Evidence Unit):**
 ```
 source_type: string
 source_id: string
-quote: string (Originalzitat)
+quote: string (verbatim quote)
 category: pain | gain | desire | belief | behavior | objection
 candidate_job_stage: define | locate | prepare | confirm | execute | monitor | modify | conclude
 emotional_signal: string
@@ -67,29 +61,29 @@ certainty: high | medium | low
 inferred_meaning: string
 ```
 
-**Schritte:**
-1. Datenquellen klassifizieren
-2. Dopplungen entfernen
-3. Rohdaten in Evidence Units zerlegen
-4. Zwischen beobachtet, interpretiert und abgeleitet unterscheiden
-5. Aussagekraft pro Quelle gewichten
+**Steps:**
+1. Classify data sources
+2. Remove duplicates
+3. Break raw data into Evidence Units
+4. Distinguish between observed, interpreted, and inferred
+5. Weight source reliability
 
 ---
 
-### Modul 2: JTBD Extraction Engine
+### Module 2: JTBD Extraction Engine
 
-**Aufgabe:** Den eigentlichen Job-to-be-Done extrahieren.
+**Task:** Extract the actual Job-to-be-Done.
 
-**Trenne:**
-- **Funktionaler Job** — Was konkret erledigt werden soll
-- **Emotionaler Job** — Wie sich die Person danach fühlen will
-- **Sozialer Job** — Wie sie vor anderen erscheinen will
+**Separate:**
+- **Functional job** — What specifically needs to get done
+- **Emotional job** — How the person wants to feel afterwards
+- **Social job** — How they want to appear to others
 
-**Leitfragen:**
-- Was versucht die Person konkret zu erledigen?
-- Welchen Fortschritt will sie in ihrer Lebens-/Arbeitssituation erreichen?
-- Wie will sie sich danach fühlen?
-- Wie will sie vor anderen erscheinen?
+**Guiding questions:**
+- What is the person specifically trying to accomplish?
+- What progress do they want in their life/work situation?
+- How do they want to feel afterwards?
+- How do they want to appear to others?
 
 **Output:**
 ```yaml
@@ -99,35 +93,35 @@ jtbd:
   social_job: [list]
 ```
 
-**Job-Typen unterscheiden:**
+**Distinguish Job types:**
 - Main Job
 - Related Jobs
 - Consumption Jobs
-- Switching Jobs (Anbieter evaluieren, Team onboarden, intern rechtfertigen, Gesichtsverlust vermeiden)
+- Switching Jobs (evaluate providers, onboard team, justify internally, avoid loss of face)
 
 ---
 
-### Modul 3: Job Map Deconstruction
+### Module 3: Job Map Deconstruction
 
-**Aufgabe:** Den Job entlang 8 Phasen zerlegen.
+**Task:** Break down the job along 8 phases.
 
-**Phasen:**
-1. **Define** — Problem erkennen & definieren
-2. **Locate** — Lösung finden
-3. **Prepare** — Vorbereitung
-4. **Confirm** — Entscheidung fällen
-5. **Execute** — Implementierung
-6. **Monitor** — Ergebnisse prüfen
-7. **Modify** — Anpassen
-8. **Conclude** — Evaluieren
+**Phases:**
+1. **Define** — Recognize & define the problem
+2. **Locate** — Find a solution
+3. **Prepare** — Preparation
+4. **Confirm** — Make a decision
+5. **Execute** — Implementation
+6. **Monitor** — Check results
+7. **Modify** — Adjust
+8. **Conclude** — Evaluate
 
-**Pro Phase extrahieren:**
-- Ziele
-- Hürden
-- Fehlerquellen
-- Zeitverluste
-- Emotionale Friktionen
-- Gewünschte Verbesserung
+**Extract per phase:**
+- Goals
+- Obstacles
+- Error sources
+- Time losses
+- Emotional friction
+- Desired improvement
 
 **Output:**
 ```yaml
@@ -137,24 +131,24 @@ job_map:
     pains: [list]
     gains: [list]
     emotional_risk: [list]
-    opportunity: [list]  # Chancen für Produkt/Kommunikation
+    opportunity: [list]  # Opportunities for product/communication
 ```
 
-**Wichtig:** Pains operationalisieren, nicht generisch.
-- ❌ "möchte Zeit sparen"
-- ✅ "Vorbereitungszeit vor Kernaufgabe von 18 Min auf unter 7 Min reduzieren"
+**Important:** Operationalize pains, don't keep them generic.
+- ❌ "wants to save time"
+- ✅ "reduce preparation time before core task from 18 min to under 7 min"
 
 ---
 
-### Modul 4: Pain–Gain–Anxiety–Desired Outcome Matrix
+### Module 4: Pain–Gain–Anxiety–Desired Outcome Matrix
 
-**Aufgabe:** Nicht nur Benefits, sondern auch Adoptionsbarrieren modellieren.
+**Task:** Model adoption barriers alongside benefits.
 
-**Vier Ebenen:**
-- **Pains** — Was stört aktuell?
-- **Gains** — Was wäre wertvoll?
-- **Anxieties** — Wovor hat die Person Angst?
-- **Desired Outcomes** — Woran misst sie Erfolg?
+**Four levels:**
+- **Pains** — What's bothering them right now?
+- **Gains** — What would be valuable?
+- **Anxieties** — What are they afraid of?
+- **Desired Outcomes** — How do they measure success?
 
 **Output:**
 ```yaml
@@ -167,17 +161,17 @@ decision_tension:
 
 ---
 
-### Modul 5: Desire & Identity Layer
+### Module 5: Desire & Identity Layer
 
-**Aufgabe:** Tiefere Verlangen und Identitätsebene modellieren.
+**Task:** Model deeper desires and identity level.
 
-**Fragen:**
-- Wer will der Kunde dabei sein?
-- Welche Identität will er bestätigen oder erreichen?
-- Welche Identität will er vermeiden?
+**Questions:**
+- Who does the customer want to be while doing this?
+- Which identity do they want to confirm or achieve?
+- Which identity do they want to avoid?
 
-**Desire-Klassen:**
-Kontrolle | Sicherheit | Status | Zugehörigkeit | Selbstwirksamkeit | Vereinfachung | Freiheit | Anerkennung | Fortschritt | Distinktion | Entlastung | Transformation
+**Desire classes:**
+Control | Security | Status | Belonging | Self-efficacy | Simplification | Freedom | Recognition | Progress | Distinction | Relief | Transformation
 
 **Output:**
 ```yaml
@@ -188,16 +182,16 @@ identity_pull:
   toward: [list]
   away_from: [list]
 product_positioning:
-  - empowerment | sicherheit | prestige | entlastung | transformation | zugehörigkeit
+  - empowerment | security | prestige | relief | transformation | belonging
 ```
 
 ---
 
-### Modul 6: Belief System Mining
+### Module 6: Belief System Mining
 
-**Aufgabe:** Glaubenssätze, mentale Modelle und Adoptionslogiken extrahieren.
+**Task:** Extract beliefs, mental models, and adoption logics.
 
-**Kategorien:**
+**Categories:**
 - beliefs about self
 - beliefs about the problem
 - beliefs about existing solutions
@@ -205,12 +199,12 @@ product_positioning:
 - beliefs about success/failure
 - beliefs about risk
 
-**Jeden Glaubenssatz klassifizieren als:**
-- förderlich
-- hemmend
-- identitätsstabilisierend
-- kaufblockierend
-- messaging-hebel
+**Classify each belief as:**
+- enabling
+- hindering
+- identity-stabilizing
+- purchase-blocking
+- messaging lever
 
 **Output:**
 ```yaml
@@ -220,151 +214,149 @@ beliefs:
   about_solutions: [list]
   about_risk: [list]
 belief_classification:
-  förderlich: [list]
-  hemmend: [list]
-  kaufblockierend: [list]
-  messaging_hebel: [list]
+  enabling: [list]
+  hindering: [list]
+  purchase_blocking: [list]
+  messaging_levers: [list]
 ```
 
 ---
 
-### Modul 7: Psycholinguistic Voice Model
+### Module 7: Psycholinguistic Voice Model
 
-**Aufgabe:** Sprachlichen Fingerabdruck der Zielgruppe modellieren.
+**Task:** Model the linguistic fingerprint of the target group.
 
-**Analyse-Dimensionen:**
-- Ich-/Wir-Frame vs. Dritte-Person
-- Konkret vs. Abstrakt
-- Knapp-pragmatisch vs. Narrativ
-- Negativ-vermeidend vs. Aspirativ-zielorientiert
-- Analytisch vs. Identitär
-- Intensitätsmarker (wirklich, absolut, gar nicht, ...)
-- Statussprache (professionell, modern, etc.)
-- Metaphern (Chaos, Ordnung, Kampf, Reise, etc.)
+**Analysis dimensions:**
+- I/We-frame vs. third person
+- Concrete vs. abstract
+- Brief-pragmatic vs. narrative
+- Negativity-avoidant vs. aspirational-goal-oriented
+- Analytical vs. identity-driven
+- Intensity markers (really, absolutely, not at all, ...)
+- Status language (professional, modern, etc.)
+- Metaphors (chaos, order, battle, journey, etc.)
 
 **Output:**
 ```yaml
 voice_profile:
   tone: [list]
   preferred_language_patterns: [list]
-  mirrored_phrases: [list]      # Zitate übernehmen
-  avoid_language: [list]        # No-Go-Wörter
-  headline_patterns: [list]     # Ableitbare Headlines
+  mirrored_phrases: [list]      # Quotes to adopt
+  avoid_language: [list]        # No-go words
+  headline_patterns: [list]     # Derivable headlines
   cta_style: string
 ```
 
 ---
 
-### Modul 8: Avatar Synthesis & Strategic Activation
+### Module 8: Avatar Synthesis & Strategic Activation
 
-**Aufgabe:** Alles in ein operatives Entscheidungsprofil überführen.
+**Task:** Convert everything into an actionable decision profile.
 
 ---
 
 ## Final Output Structure
 
 ### A. Executive Snapshot
-6–10 Sätze: Wer, was sucht sie, was blockiert, warum kauft sie wirklich.
+6–10 sentences: Who, what are they looking for, what's blocking them, why do they really buy.
 
 ### B. Context Profile
-Auslösende Situation, Umgebung, Zeitdruck, Verantwortlichkeiten, Stakeholder, Constraints.
+Triggering situation, environment, time pressure, responsibilities, stakeholders, constraints.
 
 ### C. JTBD Core
-Funktionaler Job, Emotionaler Job, Sozialer Job, Success Definition.
+Functional job, emotional job, social job, success definition.
 
 ### D. Job Map
-Pro Phase: Aufgabe, Friktion, gewünschtes Ergebnis, Chancen.
+Per phase: task, friction, desired result, opportunities.
 
 ### E. Pain/Gain/Anxiety/Outcome
-Priorisiert nach Relevanz und Kaufwirksamkeit.
+Prioritized by relevance and purchase impact.
 
 ### F. Desire & Identity
-Core Desire, Identity Aspiration, Identity Avoidance, Statussignale.
+Core desire, identity aspiration, identity avoidance, status signals.
 
 ### G. Belief System
-Dominante Glaubenssätze, zentrale Einwände, Kaufblocker, Reframe-Chancen.
+Dominant beliefs, central objections, purchase blockers, reframe opportunities.
 
 ### H. Voice of Customer
-Originalformulierungen, Sprachmuster, Trigger-Wörter, No-Go-Wörter, Messaging Mirrors.
+Original formulations, language patterns, trigger words, no-go words, messaging mirrors.
 
 ### I. Segmentation Logic
-Für wen gilt dieser Avatar? Abgrenzung zu benachbarten Avataren. Was macht ihn "aktiv"?
+Who does this avatar apply to? Differentiation from adjacent avatars. What makes them "active"?
 
 ### J. Strategic Implications
-Positionierung, Offer, Proof, Pricing-Kommunikation, Sales, Content, Produktpriorisierung.
+Positioning, offer, proof, pricing communication, sales, content, product prioritization.
 
 ### K. Confidence & Gaps
-Was ist gut belegt? Wo fehlen Daten? Welche Hypothesen müssen validiert werden?
+What is well-evidenced? Where is data missing? Which hypotheses need validation?
 
 ---
 
 ## Advanced Features
 
 ### 1. Contradiction Handling
-Aktiv nach Widersprüchen suchen und erklären.
-- Beispiel: Sagt "ich will Einfachheit", kauft aber komplexe Premium-Tools
-- Analyse: Vielleicht ist nicht Einfachheit das Primärmotiv, sondern Kontrolle oder Status durch Kompetenz
+Actively search for and explain contradictions.
+- Example: Says "I want simplicity" but purchases complex premium tools
+- Analysis: Perhaps simplicity isn't the primary motivator — control or status through competence is.
 
 ### 2. Segment Split Detection
-Erkennen wenn mehrere Avatare in einem Datensatz stecken.
-- Nicht mitteln, sondern trennen
-- "Die Daten deuten auf zwei distinkte Fortschrittslogiken hin."
+Recognize when multiple avatars are hidden in a dataset.
+- Don't average — separate them.
+- "The data suggests two distinct progress logics."
 
 ### 3. Trigger Event Mapping
-Wann wird die Persona kaufaktiv?
-- Frustspitze | Rollenwechsel | Teamwachstum | Prozessbruch | Toolversagen | KPI-Druck | Budgetfreigabe | Peer-Vergleich
+When does the persona become purchase-active?
+- Frustration peak | Role change | Team growth | Process break | Tool failure | KPI pressure | Budget approval | Peer comparison
 
 ### 4. Switching Force Analysis
-- **Push of the situation** — Aktueller Schmerz
-- **Pull of the new solution** — Versprochener Nutzen
-- **Anxiety of change** — Angst vor Umstellung
-- **Habit of the present** — Gewohnheitskraft des Status quo
+- **Push of the situation** — Current pain
+- **Pull of the new solution** — Promised benefit
+- **Anxiety of change** — Fear of transition
+- **Habit of the present** — Inertia of the status quo
 
 ### 5. Message Testing Layer
-3–5 Messaging-Angles mit Einschätzung (passt stark / mittel / riskant):
-- kontrollorientiert
-- statusorientiert
-- entlastungsorientiert
-- effizienzorientiert
-- identitätsorientiert
+3–5 messaging angles with assessment (strong fit / moderate / risky):
+- Control-oriented
+- Status-oriented
+- Relief-oriented
+- Efficiency-oriented
+- Identity-oriented
 
 ---
 
 ## Guardrails
 
-- ❌ Keine stereotype Demografie erfinden (kein "Anna, 34, liebt Kaffee")
-- ❌ Keine frei erfundenen Hobbys oder Biografien
-- ❌ Keine psychologischen Diagnosen
-- ❌ Keine unbelegten Motive als Fakten
-- ❌ Keine generischen Floskeln ("möchte Zeit sparen")
-- ✅ Originalzitate klar kennzeichnen
-- ✅ Widersprüche explizit dokumentieren
-- ✅ Aussagen mit Evidenzstatus markieren
-- ✅ Offene Fragen und Datenlücken benennen
+- ❌ No stereotypical demographics (no "Anna, 34, loves coffee")
+- ❌ No invented hobbies or biographies
+- ❌ No psychological diagnoses
+- ❌ No unsubstantiated motives stated as facts
+- ❌ No generic platitudes ("wants to save time")
+- ✅ Clearly mark original quotes
+- ✅ Explicitly document contradictions
+- ✅ Mark statements with evidence status
+- ✅ Name open questions and data gaps
 
 ---
 
 ## Usage
 
 ### Minimum Input
-Mindestens 2-3 Datenquellen mit qualitativen Rohdaten (Interviews, Reviews, Support Tickets, Forenbeiträge).
+At least 2–3 data sources with qualitative raw data (interviews, reviews, support tickets, forum posts).
 
 ### Quality Input
-5+ Datenquellen, darunter mindestens direkte Kundenäußerungen (Interviews, Sales Calls).
+5+ data sources, including at least direct customer statements (interviews, sales calls).
 
 ### Process
-1. Rohdaten bereitstellen (als Datei oder Text)
-2. Skill durchläuft 8 Module
-3. Output: Vollständiger Avatar als strukturiertes Dokument (Markdown)
-4. Q&A zum Avatar für Verfeinerung
+1. Provide raw data (as files or text)
+2. Skill runs through all 8 modules
+3. Output: Complete avatar as a structured document (Markdown)
+4. Q&A on the avatar for refinement
 
 ### Output Format
-Markdown mit YAML-Frontmatter für strukturierte Daten + narrative Abschnitte.
-Dateiname: `avatar-<segment-name>-<date>.md`
-Speicherort: `/data/workspace/growing-brands/avatars/`
+Markdown with YAML frontmatter for structured data + narrative sections.
 
 ---
 
 ## The One Question This Skill Answers
 
-> "Welche Fortschrittsbewegung versucht diese Zielgruppe unter welchem Druck zu vollziehen, welche psychologischen Kräfte beschleunigen oder blockieren diese Bewegung, und welche Sprache aktiviert Vertrauen, Handlung und Kaufbereitschaft?"
+> "What progress movement is this target group attempting under what pressure, which psychological forces accelerate or block this movement, and which language activates trust, action, and purchase readiness?"
