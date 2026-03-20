@@ -29,11 +29,67 @@ Creates evidence-based customer avatars using JTBD, Job Map, behavioral psycholo
 
 ---
 
-## Workflow (8 Modules)
+## Workflow (9 Modules)
+
+### Module 0: Deep Research (Automatic)
+
+**Task:** Supplement provided raw data with external research BEFORE analysis begins.
+
+**This module runs automatically.** It is NOT optional — it ensures the evidence base goes beyond what was manually provided.
+
+**Research Targets (based on client context):**
+1. **Competitor Voice of Customer** — Scrape competitor reviews, testimonials, social media comments (Firecrawl)
+2. **Reddit & Forum Discussions** — Search relevant subreddits/forums for organic customer language, complaints, desires (Reddit via Composio)
+3. **Market & Category Intelligence** — Category trends, positioning of competitors, market gaps (Perplexity web search)
+4. **Customer Language Corpus** — Collect real quotes from reviews (Google, Trustpilot, G2), social media, Q&A sites (Firecrawl + Perplexity)
+5. **Industry Pain Points** — Industry reports, common complaints, emerging trends (Perplexity + NotebookLM)
+
+**Available Research Tools:**
+
+| Tool | Best For | Access |
+|---|---|---|
+| **Firecrawl** (MCP) | Website scraping, competitor analysis, review sites | MCP Server — scrape any URL |
+| **Perplexity** (web_search) | Market research, trends, category analysis, finding sources | Native — `web_search` tool |
+| **Reddit** (Composio) | Organic customer discussions, pain points, language patterns | Composio — reddit tools |
+| **NotebookLM** (CLI) | Deep research synthesis, multi-source analysis | CLI — `notebooklm source add` + `notebooklm ask` |
+| **Web Fetch** | Quick URL extraction, lightweight scraping | Native — `web_fetch` tool |
+
+**Research Process:**
+1. **Identify research gaps** — What do we NOT have in the provided raw data?
+2. **Build search queries** — Based on:
+   - Target audience description
+   - Product/service keywords
+   - Competitor names (if known)
+   - Industry/category terms
+3. **Execute research** — Use tools in order of relevance:
+   - First: Perplexity (broad market/category context)
+   - Second: Firecrawl (competitor sites, review pages, testimonials)
+   - Third: Reddit/Composio (organic discussions)
+   - Fourth: NotebookLM (synthesize findings into structured knowledge)
+4. **Normalize findings** — Convert all research into Evidence Units (same format as Module 1)
+5. **Merge with provided data** — Combined evidence base feeds into Module 1
+
+**Research Output (per source):**
+```yaml
+source_type: research | competitor_scrape | reddit | review | market_report | notebooklm
+source_id: string (URL or tool reference)
+quotes: [list of verbatim quotes from target group]
+category: pain | gain | desire | belief | behavior | objection | competitor_claim | market_trend
+certainty: high | medium | low
+notes: string
+```
+
+**Quality Gate:**
+- Minimum 5 additional external sources for a new avatar
+- Minimum 3 additional sources for avatar refinement
+- Every quote must have a source URL
+- If research returns insufficient results, explicitly flag in Module 8 (Section K)
+
+---
 
 ### Module 1: Research Intake & Evidence Normalization
 
-**Task:** Convert all inputs into a standardized knowledge model.
+**Task:** Convert all inputs (provided raw data + Module 0 research) into a standardized knowledge model.
 
 **Accepted Inputs:**
 - Interview transcripts

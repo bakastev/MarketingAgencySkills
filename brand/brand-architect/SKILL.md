@@ -61,7 +61,73 @@ This skill draws on established frameworks — applied specifically to AI-agent-
 
 ---
 
-## Workflow (6 Modules)
+## Workflow (7 Modules)
+
+### Module 0: Brand Research (Automatic)
+
+**Task:** Research the competitive landscape, category positioning, and validate avatar evidence BEFORE building the brand strategy.
+
+**This module runs automatically.** It fills the gap between "we know the customer" and "we know the market."
+
+**Research Targets:**
+1. **Competitor Brand Analysis** — Who else targets this avatar? What positions do they own? How do they talk? (Firecrawl)
+2. **Category Language** — What vocabulary, metaphors, and frames dominate the category? How can we differentiate? (Perplexity + Firecrawl)
+3. **Social Proof Mining** — What do real customers say about similar products/services? What language do they use? (Reddit via Composio)
+4. **Pricing Intelligence** — What does the market charge for similar offers? What's the price anchoring? (Perplexity)
+5. **Brand Archetype Analysis** — What brand personalities exist in this category? Where is whitespace? (NotebookLM synthesis)
+
+**Available Research Tools:**
+
+| Tool | Best For | Access |
+|---|---|---|
+| **Firecrawl** (MCP) | Competitor website scraping, landing page copy, ad copy analysis | MCP Server |
+| **Perplexity** (web_search) | Category research, competitor overview, pricing benchmarks | Native — `web_search` |
+| **Reddit** (Composio) | Customer opinions on competitors, organic language, pain points | Composio — reddit tools |
+| **NotebookLM** (CLI) | Synthesize competitor landscape into strategic insights | CLI — `notebooklm` |
+| **Web Fetch** | Quick competitor page extraction | Native — `web_fetch` |
+
+**Research Process:**
+1. **Extract research queries from avatar:**
+   - Target audience keywords (from Section I — Segmentation)
+   - Competitor names (from Section J — if mentioned)
+   - Category terms (from Section J — Positioning)
+   - Belief keywords (from Section G — for social proof validation)
+2. **Execute research** — Prioritized by avatar data gaps:
+   - First: Perplexity (broad competitive landscape)
+   - Second: Firecrawl (top 3-5 competitor websites — copy, positioning, pricing)
+   - Third: Reddit (customer sentiment, organic language)
+   - Fourth: NotebookLM (optional — synthesize if complex competitive landscape)
+3. **Output research brief** — Structured competitive analysis:
+```yaml
+competitor_landscape:
+  - name: string
+    position: string
+    pricing: string
+    voice_tone: string
+    strengths: [list]
+    weaknesses: [list]
+    avatar_alignment: high | medium | low
+category_language:
+  dominant_frames: [list]
+  competitor_vocabulary: [list]
+  whitespace_opportunities: [list]
+pricing_intelligence:
+  market_range: string
+  anchor_points: [list]
+  positioning_vs_price: string
+social_proof_signals:
+  common_praise: [list]
+  common_complaints: [list]
+  language_patterns: [list]
+```
+
+**Quality Gate:**
+- Minimum 3 competitors analyzed
+- At least 1 pricing data point
+- Social proof signals from at least 2 sources
+- If research is insufficient, flag in Module 6 (Section I)
+
+---
 
 ### Module 1: Brand Diagnosis
 
