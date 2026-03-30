@@ -13,6 +13,8 @@ MarketingAgencySkills/
 ├── brand/                        # Branding
 ├── content/                      # Content Creation
 ├── seo/                          # Search Engine Optimization
+│   ├── aio-geo-goldstandard/     # AIO / GEO / AEO page + markup QA ✅
+│   └── seo-specialist/
 ├── ads/                          # Paid Advertising
 ├── social/                       # Social Media
 ├── analytics/                    # Analytics & Reporting
@@ -43,6 +45,7 @@ Each skill is self-contained in its own folder with a `SKILL.md` file containing
 | Skill | Discipline | Status |
 |---|---|---|
 | **Customer Avatar Architect** | Strategy/Research | ✅ Active |
+| **AIO / GEO / AEO Gold Standard** | SEO (AI visibility) | ✅ Active |
 | Brand Architect | Branding | 🔜 Planned |
 | Content Strategist | Content | 🔜 Planned |
 | SEO Specialist | SEO | 🔜 Planned |

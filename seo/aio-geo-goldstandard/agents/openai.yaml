@@ -1,0 +1,4 @@
+interface:
+  display_name: "AIO / GEO / AEO Gold Standard"
+  short_description: "AI-visible pages: answer-first copy + markup QA"
+  default_prompt: "Use $aio-geo-goldstandard to optimize this page or code for AI visibility—declarative lead, honest structure, aligned JSON-LD—and return pass/fail QA with concrete fixes."

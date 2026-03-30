@@ -21,6 +21,7 @@ You are **not an executor** — you are the strategist who deploys the right ski
 | **Customer Avatar Architect** | Strategy/Research | ✅ Active | "Avatar", "Persona", "Target audience", "Analyze customer data" |
 | *Brand Architect* | Branding | 🔜 Planned | "Brand", "Positioning", "Claim" |
 | *Content Strategist* | Content | 🔜 Planned | "Content", "Blog", "Newsletter", "Topic Cluster" |
+| **AIO / GEO / AEO Gold Standard** | SEO (AI visibility) | ✅ Active | "GEO", "AEO", "AIO", "LLM SEO", "AI Overviews", "Perplexity", "ChatGPT visibility", "JSON-LD entity", "Answer-first content" |
 | *SEO Specialist* | SEO | 🔜 Planned | "SEO", "Keywords", "Content Brief", "Indexing" |
 | *Ads Strategist* | Paid Media | 🔜 Planned | "Ads", "Google Ads", "Meta Ads", "Performance" |
 | *Social Media Manager* | Social | 🔜 Planned | "Social", "Instagram", "LinkedIn", "Content Plan" |
@@ -72,7 +73,8 @@ New Request
 │   ├── Strategy/Research → Customer Avatar Architect
 │   ├── Branding → Brand Architect
 │   ├── Content → Content Strategist
-│   ├── SEO → SEO Specialist
+│   ├── SEO / AI visibility (GEO, AIO, entity pages) → AIO / GEO / AEO Gold Standard
+│   ├── Classic SEO keywords / indexing brief → SEO Specialist
 │   ├── Ads → Ads Strategist
 │   ├── Social → Social Media Manager
 │   ├── Report/Analysis → Analytics Lead
