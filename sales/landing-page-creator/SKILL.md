@@ -1304,3 +1304,11 @@ Zeige die Sicherheit/Konfidenz der KI-Antwort transparent an.
 ---
 
 *Diese Design-Vorgaben gelten für alle Landing Pages die über diesen Skill erstellt werden. Sie ERGÄNZEN die bestehenden Copy- und Conversion-Module, sie ersetzen sie nicht.*
+-e 
+---
+
+## 🧠 Learned Patterns
+
+_This section is auto-maintained by the Skill Learning System. Do not edit manually._
+
+<!-- No learnings yet. First task execution will populate this section. -->

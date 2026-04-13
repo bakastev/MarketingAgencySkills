@@ -380,6 +380,38 @@ When does the persona become purchase-active?
 
 ---
 
+## Pipeline Integration Rules
+
+### Critical Dependencies ( downstream skills depend on ALL of these!)
+The following sections are MANDATORY and must be complete before any downstream skill (Brand Architect, Landing Page, etc.) processes this avatar:
+
+**Tier 1 — Blocking (incomplete = STOP, do not proceed):**
+- Section A (Executive Snapshot) — downstream needs the core narrative
+- Section C (JTBD Core) — functional/emotional/social jobs drive all messaging
+- Section E (Pain/Gain/Anxiety/Outcome) — foundation for all copy and offers
+- Section F (Desire & Identity) — drives positioning and emotional messaging
+- Section G (Belief System) — drives objection handling and FAQ
+- Section H (Voice of Customer) — drives brand voice and copy style
+
+**Tier 2 — Important (incomplete = flag, may proceed with caution):**
+- Section B (Context Profile) — enriches targeting
+- Section D (Job Map) — enriches funnel design
+- Section I (Segmentation Logic) — critical for multi-segment avatars
+- Section J (Strategic Implications) — guides offer architecture
+- Section K (Confidence & Gaps) — guides validation priorities
+
+### Time Management
+When running as subagent with time constraints:
+1. Write Sections A, C, E, F, G, H FIRST (Tier 1)
+2. Write Sections B, D, I, J, K SECOND (Tier 2)
+3. Google Doc upload is LAST — local file has priority
+4. If time runs out during Tier 2: save what you have, flag incomplete sections explicitly
+
+### Save Early
+Write the Markdown file incrementally. Do NOT build everything in memory and save once. Save after each section to prevent data loss on timeout.
+
+---
+
 ## Guardrails
 
 - ❌ No stereotypical demographics (no "Anna, 34, loves coffee")
@@ -391,6 +423,7 @@ When does the persona become purchase-active?
 - ✅ Explicitly document contradictions
 - ✅ Mark statements with evidence status
 - ✅ Name open questions and data gaps
+- ✅ Save incrementally — never hold everything in memory
 
 ---
 
@@ -416,3 +449,11 @@ Markdown with YAML frontmatter for structured data + narrative sections.
 ## The One Question This Skill Answers
 
 > "What progress movement is this target group attempting under what pressure, which psychological forces accelerate or block this movement, and which language activates trust, action, and purchase readiness?"
+-e 
+---
+
+## 🧠 Learned Patterns
+
+_This section is auto-maintained by the Skill Learning System. Do not edit manually._
+
+<!-- No learnings yet. First task execution will populate this section. -->

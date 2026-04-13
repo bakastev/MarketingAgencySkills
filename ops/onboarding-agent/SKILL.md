@@ -176,3 +176,11 @@ After onboarding is complete:
 - ✅ Always ask for real customer quotes/words — they're worth more than descriptions
 - ✅ Be honest about data gaps — a partial avatar based on real data beats a complete avatar based on guessing
 - ✅ Save everything — even tangential data might be valuable later
+-e 
+---
+
+## 🧠 Learned Patterns
+
+_This section is auto-maintained by the Skill Learning System. Do not edit manually._
+
+<!-- No learnings yet. First task execution will populate this section. -->

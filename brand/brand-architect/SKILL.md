@@ -139,15 +139,25 @@ social_proof_signals:
    - Messaging Levers (Section G)
    - Voice Patterns (Section H)
    - Positioning Implications (Section J)
-2. **Existing Brand Audit** (if brand exists):
+2. **⚠️ Service Inventory (MANDATORY)** — Before ANY brand work:
+   - List ALL services/capabilities the client actually offers
+   - Source: Client brief, website, previous conversations, CRM data
+   - Every service listed here MUST appear in:
+     - Module 3 (Brand Identity — reflected in brand promise/values)
+     - Module 4 (Brand Voice — reflected in messaging angles)
+     - Module 5 (Offer Architecture — reflected in offer tiers)
+     - Downstream skills (Landing Page, Ads Copy, etc.)
+   - If a service from the client brief is missing in any downstream output → FLAG IT
+   - Example: If client offers "Google Ads & Meta Ads" but Offer Architecture only lists "Web Design" → ERROR
+3. **Existing Brand Audit** (if brand exists):
    - Website, social profiles, ads, collateral
    - Compare brand expression against avatar expectations
    - Identify gaps between what the brand says and what the avatar needs
-3. **Competitive Landscape** (if data available):
+4. **Competitive Landscape** (if data available):
    - Who else serves this avatar?
    - What positions are taken?
    - Where is whitespace?
-4. **Verdict:** Fresh build or refinement?
+5. **Verdict:** Fresh build or refinement?
 
 **Output:**
 ```yaml
@@ -157,6 +167,12 @@ diagnosis:
   avatar_alignment: high | medium | low
   key_gaps: [list]
   competitive_position: [description]
+service_inventory:
+  - name: string
+    category: product | service | consulting | retainer
+    avatar_fit: high | medium | low
+    included_in_offers: yes | no | partial
+    notes: string
 ```
 
 ---
@@ -564,3 +580,11 @@ Markdown with YAML frontmatter for structured data + narrative sections.
 ## The One Question This Skill Answers
 
 > "Given who this customer is, what they need, what they believe, and how they talk — what brand would they trust, what would it say, and what should it offer?"
+-e 
+---
+
+## 🧠 Learned Patterns
+
+_This section is auto-maintained by the Skill Learning System. Do not edit manually._
+
+<!-- No learnings yet. First task execution will populate this section. -->
